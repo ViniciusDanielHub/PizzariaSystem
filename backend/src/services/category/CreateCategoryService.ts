@@ -13,7 +13,7 @@ export class CreateCategoryService{
 
     const category = await prismaClient.category.create({
       data: {
-        name: name,
+        name,
       },
       select: {
         id: true,

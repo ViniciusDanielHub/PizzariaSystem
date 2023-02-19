@@ -11,8 +11,8 @@ export class AddItemService {
 
     const order = await prismaClient.item.create({
       data: {
-        order_id:order_id,
-        product_id:product_id,
+        order_id,
+        product_id,
         amount
       }
     })

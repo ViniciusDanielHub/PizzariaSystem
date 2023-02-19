@@ -9,7 +9,7 @@ export class ListByCategoryService {
 
     const findByCategory = await prismaClient.product.findMany({
       where: {
-        category_id: category_id
+        category_id
       }
     })
 
