@@ -1,0 +1,123 @@
+import { createContext, useCallback, useEffect, useState } from 'react';
+
+import { useRouter } from 'next/router'
+
+import { toast } from 'react-toastify';
+
+import { 
+  ExitRequest, 
+  getTokenLocalStorage, 
+  getUserLocalStorage, 
+  LoginRequest, 
+  RegisterRequest, 
+  setUserLocalStorage 
+} from './util';
+
+import { 
+  AuthProviderProps, 
+  IContext, 
+  IUser, 
+  IAuthentication, 
+  IRegister
+} from './types';
+
+import { api } from 'services/api/api';
+
+export const AuthContext = createContext({} as IContext)
+
+export function AuthProvider({ children }: AuthProviderProps) {
+  const [user, setUser] = useState<IUser>()
+
+  const isAuthenticated = !!user;
+
+  const router = useRouter();
+
+  async function teste() {
+    const token = await getTokenLocalStorage();
+
+    if (token) {
+      api.defaults.headers.authorization = `Bearer ${token.token}`;
+      api.get('/me').then(response => {
+        const { id, name, email } = response.data;
+
+        setUser({
+          id,
+          name,
+          email
+        })
+      })
+
+        .catch(() => {
+          signOut()
+        })
+    }
+  }
+
+  useEffect(() => {
+    teste()
+  }, []);
+
+  async function signIn({ email, password }: IAuthentication) {
+
+    try{
+
+      const res = await LoginRequest(email, password);
+
+      const payloadUser = {
+        id: res.id,
+        name: res.name,
+        email: res.email
+      }
+
+      const payloadToken = {
+        token: res.token
+      }
+
+      setUserLocalStorage(payloadUser, payloadToken)
+      
+      setUser(payloadUser)
+      
+      const teste = api.defaults.headers.authorization = `Bearer ${payloadToken.token}`;
+
+      console.log('api TOKEN aquiiii', teste)
+
+      toast.success('Login Realizado Com Sucesso')
+
+      router.push('/dashboard')
+
+    }catch(err){
+      toast.error('Erro Ao Acessar')
+      console.log('erro', err)
+    }
+  }
+
+  const signOut = useCallback(() => {
+
+    ExitRequest()
+
+    setUser({} as IUser);
+
+    router.push('/')
+  }, []);
+
+  async function signUp({ name, email, password }: IRegister) {
+
+    try{
+      const res = await RegisterRequest(name, email, password)
+
+      toast.success('Cadastro Realizado Com Sucesso')
+
+      router.push('/')
+
+    }catch(err) {
+      toast.error('Erro Ao Cadastrar')
+      console.log('erro', err)
+    }
+  }
+
+  return (
+    <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, signUp}}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
