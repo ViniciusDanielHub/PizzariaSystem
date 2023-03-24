@@ -12,11 +12,6 @@ export interface IUser {
   id: any;
   name: any;
   email: any;
-  token?: string
-}
-
-export interface IToken {
-  token: string
 }
 
 export interface IAuthentication {
