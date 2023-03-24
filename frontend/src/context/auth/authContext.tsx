@@ -20,7 +20,7 @@ export function signOut() {
   }
 }
 
-export function AuthProvider({children}: AuthProviderProps){
+export function AuthProvider({children}: IAuthProvider){
   const [user, setUser] = useState<IUser>()
   const isAuthenticated = !!user;
 
