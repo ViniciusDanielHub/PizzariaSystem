@@ -3,9 +3,8 @@ import styled, { css, DefaultTheme } from 'styled-components'
 export const Container = styled.main`
   ${({ theme }) => css`
      max-width: 496px;
-     margin: 8rem auto;
-     padding: 0 2rem;
-
+     margin: ${theme.spacings.huge} auto;
+     padding: 0 ${theme.spacings.xsmall};
      display: flex;
      flex-direction: column;
   `}
@@ -13,7 +12,7 @@ export const Container = styled.main`
 
 export const RegistrationProductText = styled.h1`
   ${({ theme }) => css`
-     color: #fff;
+     color: ${theme.colors.white};
 `}
 `
 
@@ -21,20 +20,20 @@ export const FormProduct = styled.form`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
+    margin: ${theme.spacings.xsmall} 0;
 `}
 `
 
 export const SelectedProduct = styled.select`
   ${({ theme }) => css`
   width: 100%;
-  height: 40px;
-  border-radius: 0.4rem;
+  height: ${theme.font.sizes.xxxlarge};
+  border-radius: ${theme.border.basicRadius};
   margin-bottom: ${theme.spacings.xxsmall};
-  color: #fff;
+  color: ${theme.colors.white};
   background-color: ${theme.colors.darkGray};
   border: 1px solid ${theme.colors.gray};
-  padding: 0 0.8rem;
+  padding: 0 ${theme.spacings.xxsmall};
 `}
 `
 
@@ -49,10 +48,10 @@ export const TextArea = styled.textarea`
     min-height: 124px;
     background-color: ${theme.colors.darkGray};
     border: 0;
-    padding: 1rem;
-    height: 40px; 
-    border-radius: 0.3rem;
-    color: #fff;
+    padding: ${theme.spacings.xsmall};
+    height: ${theme.font.sizes.xxxlarge};
+    border-radius: ${theme.border.basicRadius};
+    color: ${theme.colors.white};
     margin-bottom:${theme.spacings.xxsmall};
 `}
 `
@@ -63,7 +62,7 @@ export const LabelAvatar = styled.label`
   height: 224px;
   background-color: ${theme.colors.darkGray};
   margin-bottom: ${theme.spacings.xxsmall};
-  border-radius: 0.8rem;
+  border-radius: ${theme.border.radius};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,10 +92,10 @@ export const InputUpload = styled.input`
 
 export const ProductImage = styled.img`
   ${({ theme }) => css`
-  z-index: 2;
+   z-index: 2;
    width: 100%;
    height: 100%;
    object-fit: cover;
-     border-radius: 0.8rem;
+   border-radius: ${theme.border.radius};
 `}
 `
