@@ -15,7 +15,7 @@ export const CreateAccountText = styled.h1`
      margin:${theme.spacings.xsmall} 0 ${theme.spacings.xsmall} 0 ;
      font-size:${theme.font.sizes.xxlarge};
      font-family: 'Poppins';
-     font-weight: 600;
+     font-weight: ${theme.font.bold};
      color: ${theme.colors.lightGray};
   `}
 `
