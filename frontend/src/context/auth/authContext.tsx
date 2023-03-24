@@ -1,42 +1,15 @@
 import { createContext, ReactNode, useCallback, useEffect, useState } from 'react';
+import Router from 'next/router'
 
 import { api } from 'services/apiClient';
 
 import { destroyCookie, setCookie, parseCookies } from 'nookies';
 
-import Router from 'next/router'
 import { toast } from 'react-toastify';
 
-type AuthContextData = {
-  user: UserProps | undefined;
-  isAuthenticated: boolean;
-  signIn: (credentials: SignInProps) => Promise<void>;
-  signOut: () => void;
-  signUp: (credentials: SignUpProps) => Promise<void>;
-}
+import { IAuthentication, IAuthProvider, IContext, IRegister, IUser } from './types';
 
-type UserProps = {
-  id: string
-  name: string;
-  email: string;
-}
-
-type SignInProps = {
-  email: string;
-  password: string;
-}
-
-type SignUpProps = {
-  name: string;
-  email: string;
-  password: string;
-}
-
-type AuthProviderProps = {
-  children: ReactNode
-}
-
-export const AuthContext = createContext({} as AuthContextData)
+export const AuthContext = createContext({} as IContext)
 
 export function signOut() {
   try{
@@ -48,7 +21,7 @@ export function signOut() {
 }
 
 export function AuthProvider({children}: AuthProviderProps){
-  const [user, setUser] = useState<UserProps>()
+  const [user, setUser] = useState<IUser>()
   const isAuthenticated = !!user;
 
   useEffect(() => {
@@ -70,7 +43,7 @@ export function AuthProvider({children}: AuthProviderProps){
     }
   }, [])
 
-  async function signIn({email, password}: SignInProps) {
+  async function signIn({email, password}: IAuthentication) {
     try{
        const response = await api.post('/session', {
         email,
@@ -102,7 +75,7 @@ export function AuthProvider({children}: AuthProviderProps){
     }
   }
 
-  async function signUp({name, email, password}: SignUpProps) {
+  async function signUp({name, email, password}: IRegister) {
     try{
 
       const response = await api.post('/users', {
