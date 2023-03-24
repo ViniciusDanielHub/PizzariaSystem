@@ -3,9 +3,8 @@ import styled, { css, DefaultTheme } from 'styled-components'
 export const ContainerCenter = styled.div`
   ${({ theme }) => css`
      max-width: 496px;
-     margin: 8rem auto;
-     padding: 0 2rem;
-
+     margin: ${theme.spacings.huge} auto;
+     padding: 0 ${theme.spacings.small};
      display: flex;
      flex-direction: column;
   `}
@@ -20,7 +19,7 @@ export const OrderHeader = styled.div`
 
 export const TitleOrder = styled.h1`
   ${({ theme }) => css`
-    color: #fff;
+    color: ${theme.colors.white};
   `}
 `
 
@@ -28,7 +27,7 @@ export const ButtonRefresh = styled.button`
   ${({ theme }) => css`
       background: transparent;
       border: 0;
-      margin-left: 1rem;
+      margin-left: ${theme.spacings.xsmall};
       cursor: pointer;
   `}
 `
@@ -37,7 +36,7 @@ export const ListOrders = styled.article`
   ${({ theme }) => css`
      display: flex;
      flex-direction: column;
-     margin: 1rem 0;
+     margin: ${theme.spacings.xsmall} 0;
   `}
 `
 
@@ -46,9 +45,9 @@ export const OrderItem = styled.section`
      display: flex;
      flex-direction: row;
      background-color: ${theme.colors.darkGray};
-     margin-bottom: 2rem;
+     margin-bottom: ${theme.spacings.small};
      align-items: center;
-     border-radius: 0.8rem;
+     border-radius: ${theme.border.radius};
   `}
 `
 
@@ -57,9 +56,9 @@ export const ButtonOrderItem = styled.button`
      cursor: pointer;
      border: 0;
      background: transparent;
-     font-size: 1.2rem;
-     color: #fff;
-     height: 60px;
+     font-size: ${theme.font.sizes.xsmall};
+     color: ${theme.colors.white};
+     height: ${theme.font.sizes.huge};
      align-items: center;
      display: flex;
   `}
@@ -67,25 +66,25 @@ export const ButtonOrderItem = styled.button`
 
 export const Tag = styled.div`
   ${({ theme }) => css`
-  width: 8px;
+  width: ${theme.spacings.xxsmall};
   background-color: ${theme.colors.secondary};
-  height: 60px;
-  border-radius: 0.3rem 0 0 0.3rem;
-  margin-right: 1rem;
+  height: ${theme.font.sizes.huge};
+  border-radius: ${theme.border.basicRadius} 0 0 ${theme.border.basicRadius};
+  margin-right: ${theme.spacings.xsmall};
   `}
 `
 
 export const NameTable = styled.span`
   ${({ theme }) => css`
       font-size: ${theme.font.sizes.small};
-      font-family: 'Poppins';
+      font-family: ${theme.font.family};
   `}
 `
 
 export const EmptyListText = styled.span`
   ${({ theme }) => css`
       font-size: ${theme.font.sizes.small};
-      font-family: 'Poppins';
+      font-family: ${theme.font.family};
       color: ${theme.colors.gray}
   `}
 `
