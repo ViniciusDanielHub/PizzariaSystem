@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import Router from 'next/router'
 
 import { api } from 'services/apiClient';
