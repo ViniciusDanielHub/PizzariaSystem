@@ -4,19 +4,19 @@ export const ContainerModal = styled.div`
   ${({ theme }) => css`
   width: 440px;
   color: ${theme.colors.white};
-  border-radius: 1rem;
+  border-radius: ${theme.border.hugeBorder};
   `}
 `
 
 export const TitleOrderModal = styled.h2`
   ${({ theme }) => css`
-  margin: 1rem 0;
+  margin: ${theme.spacings.xxsmall} 0;
   `}
 `
 
 export const Table = styled.span`
   ${({ theme }) => css`
-  font-size: 2rem;
+  font-size: ${theme.font.sizes.xlarge};
   `}
 `
 
@@ -31,7 +31,7 @@ export const ContainerItem = styled.section`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
+    margin: ${theme.spacings.xsmall} 0;
   `}
 `
 
@@ -42,19 +42,19 @@ export const AmountItem = styled.span`
 
 export const Description = styled.span`
   ${({ theme }) => css`
-    margin-top: 0.5rem;
+    margin-top: ${theme.spacings.xxsmall};
     word-break: break-all;
   `}
 `
 
 export const ButtonOrder = styled.button`
   ${({ theme }) => css`
-    margin-top: 1.5rem;
+    margin-top: ${theme.spacings.xsmall};
     background-color: rgba(0,0,0, 40%);
     border: 0;
     cursor: pointer;
-    padding: 1rem 1.2rem;
-    border-radius: 0.8rem;
+    padding: ${theme.spacings.xsmall} ${theme.spacings.xsmall};
+    border-radius: ${theme.border.radius};
     color: ${theme.colors.secondary}
   `}
 `
