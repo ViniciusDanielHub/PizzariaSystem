@@ -76,6 +76,9 @@
 
   # Rodar as migrations:
   $ yarn prisma migrate dev
+  
+  # Rodar Banco:
+  $ yarn dev
 ```
 
 ## :computer: Iniciando front-end
