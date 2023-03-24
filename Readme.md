@@ -42,13 +42,7 @@
   $ git clone https://https://github.com/ViniciusDanielHub/PizzariaSystem
 
   # Entrar no diretório:
-  $ cd frontend
-
-    # Clonar o projeto backend:
-  $ git clone https://https://github.com/ViniciusDanielHub/PizzariaSystem
-
-  # Entrar no diretório:
-  $ cd backend
+  $ cd PizzariaSystem
 ```
 
 ## :gear: Iniciando back-end
