@@ -35,8 +35,8 @@ export const Button = styled.button`
 export const ButtonText = styled.a`
   ${({ theme }) => css`
      font-size:${theme.font.sizes.medium};
-     font-family: 'Poppins';
-     font-weight: 600;
+     font-family: ${theme.font.family};
+     font-weight: ${theme.font.bold};
      color: ${theme.colors.lightGray};
   `}
 `
