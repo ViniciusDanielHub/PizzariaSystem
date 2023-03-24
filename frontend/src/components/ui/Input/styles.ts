@@ -10,6 +10,6 @@ export const Input = styled.input`
      color: ${theme.colors.white};
      padding: ${theme.spacings.xsmall};
      border: 3px solid ${theme.colors.darkGray};
-     font-family: 'Poppins';
+     font-family: ${theme.font.family};
   `}
 `
