@@ -4,7 +4,9 @@ export default {
     gutter: '3.2rem'
   },
   border: {
-    radius: '0.8rem'
+    basicRadius: '0.4rem',
+    radius: '0.8rem',
+    hugeBorder: '1.4rem',
   },
   font: {
     family:
@@ -22,7 +24,8 @@ export default {
       xxlarge: '2.8rem',
       xxxlarge: '5.0rem',
       xultralarge: '5.8rem',
-      huge: '6.0rem'
+      huge: '6.0rem',
+      xhuge: '8.0rem',
     }
   },
   colors: {
@@ -44,7 +47,8 @@ export default {
     medium: '3.2rem',
     large: '4.0rem',
     xlarge: '4.8rem',
-    xxlarge: '5.6rem'
+    xxlarge: '5.6rem',
+    huge: '8.0rem',
   },
   layers: {
     base: 10,
