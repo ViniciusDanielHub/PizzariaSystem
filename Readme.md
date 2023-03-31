@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="PizzariaSystem Logo" src="https://i.imgur.com/x23mJct.png" width="250px" />
+    <img alt="PizzariaSystem Logo" src="https://i.imgur.com/j100xd6.png" width="650px" />
 </h1>
 
 <h1 align="center">
