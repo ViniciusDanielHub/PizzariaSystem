@@ -9,9 +9,9 @@ export interface IContext{
 }
 
 export interface IUser {
-  id: any;
-  name: any;
-  email: any;
+  id: string;
+  name: string;
+  email: string;
 }
 
 export interface IAuthentication {
