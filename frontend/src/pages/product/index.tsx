@@ -8,23 +8,11 @@ import { Header } from 'components/Header';
 
 import { FiUpload } from 'react-icons/fi';
 
-import UserSession from 'pages/usersession';
 import { ChangeEvent, FormEvent, useState } from 'react';
-import Image from 'next/image';
-import { GetServerSidePropsContext } from 'next';
-import { getTokenLocalStorage } from 'context/auth/util';
 import { canSSRAuth } from 'utils/canSSRAuth';
 import { setupAPIClient } from 'services/api/api';
 import { toast } from 'react-toastify';
-
-type ItemProps = {
-  id: string;
-  name: string;
-}
-
-interface CategoryProps{
-  categoryList: ItemProps[];
-}
+import { CategoryProps } from 'types/types';
 
 export default function Product({categoryList}: CategoryProps) {
 
