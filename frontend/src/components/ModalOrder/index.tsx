@@ -4,7 +4,7 @@ import * as S from './styles'
 
 import { FiX } from 'react-icons/fi';
 
-import { OrderItemProps } from 'pages/dashboard';
+import { OrderItemProps } from 'types/types';
 
 interface ModalOrderProps{
   isOpen: boolean;
